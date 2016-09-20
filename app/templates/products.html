@@ -1,0 +1,28 @@
+<div ng-controller="productsCtrl">
+    <div class="row">
+        <div class="col-sm-2">
+            <input type="text" class="form-control" placeholder="Search" ng-model="min">
+        </div>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" placeholder="Search" ng-model="max">
+        </div>
+        <div class="col-sm-2">
+            <button ng-click="showMore()" class="btn btn-primary">Show More</button>
+        </div>
+    </div>
+    <div></div>
+
+    <div class="row">
+
+
+        <div class="col-sm-6 col-md-4" ng-repeat="product in products|rangeFilter:min:max|orderBy:'-price'">
+            <div class="thumbnail">
+                <img src="/app/images/{{product.image}}.jpg" alt="...">
+                <div class="caption">
+                    <h3>{{product.category|uppercase}}</h3>
+                    <p>This is awesome dress</p>
+                    <p><a href="#" class="btn btn-primary" role="button">{{product.price|currency:"INR"}}</a> <a href="#" class="btn btn-default" role="button" ng-click="addProductToCart(product)">Add To cart</a></p>
+                </div>
+            </div>
+        </div>
+    </div>

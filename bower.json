@@ -1,0 +1,21 @@
+{
+  "name": "CTS-Webinar-Sep-Batch2",
+  "homepage": "https://github.com/kiranuidev/CTS-Webinar-Sep-Batch2",
+  "authors": [
+    "kiran paturi <kpaturi@smarttuition.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8"
+  }
+}
