@@ -2,7 +2,13 @@ angular.module("products")
     .controller("productsCtrl", ["$scope", "productsSvc", "cartSvc",
 
                                  function ($scope, productsSvc, cartSvc) {
-            $scope.products = productsSvc.getProductList();
+            productsSvc.getProductList()
+                .then(function (response) {
+                    console.log(response);
+                    $scope.products = response.data.products;
+                }).catch(function (response) {
+                    console.log(response);
+                });
             $scope.productCount = 3;
             $scope.showMore = function () {
                 $scope.productCount += 3;
