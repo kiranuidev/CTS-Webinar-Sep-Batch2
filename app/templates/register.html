@@ -39,7 +39,13 @@
         <div class="form-group">
             <label for="inputEmail" class="control-label col-xs-2">Date Of Birth</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control" placeholder="Date Of Birth" ng-model="vm.user.DOB">
+                <!--<input type="text" class="form-control" placeholder="Date Of Birth" ng-model="vm.user.DOB">-->
+                <p class="input-group">
+                    <input type="text" class="form-control" ng-model="vm.user.DOB" uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                    <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+                </p>
             </div>
         </div>
         <!--<div class="form-group">
@@ -57,10 +63,12 @@
         <div class="form-group">
             <label for="inputEmail" class="control-label col-xs-2">Country</label>
             <div class="col-xs-4">
-                <select class="form-control" name="country" ng-model="vm.selectedCountry" ng-options="country.code for country in vm.countries">
+                <!--<select class="form-control" name="country" ng-model="vm.selectedCountry" ng-options="country.code for country in vm.countries">
                     <option value="">Please Select</option>
                 </select>{{vm.selectedCountry}}
+-->
 
+                <input type="text" placeholder="Enter Country Name" ng-model="vm.selectedCountry" uib-typeahead="country.name for country in vm.countries | filter:$viewValue | limitTo:8" class="form-control">
             </div>
         </div>
 

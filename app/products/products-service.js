@@ -1,7 +1,16 @@
 angular.module("products")
-    .service("productsSvc", ["$http", function ($http) {
+    .service("productsSvc", ["$http", "$q", function ($http, $q) {
         this.getProductList = function () {
-            return $http.get("app/api/products.json");
+            var dfd = $q.defer();
+            $http.get("app/api/products.json")
+                .then(function (response) {
+                    dfd.resolve(response)
+                }).catch(function (response) {
+                    dfd.reject(response);
+                });
+
+            return dfd.promise;
+            //return $http.get("app/api/products.json");
         };
 }]);
 /*

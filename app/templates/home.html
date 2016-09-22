@@ -1,1 +1,13 @@
-<h1>Home</h1>
+<div ng-controller="homeCtrl" style="height: 305px;margin:top:40%">
+
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+        <div uib-slide ng-repeat="i in images track by $index">
+            <!--<img ng-src="app/images/{{i.image}}" style="margin:auto;">-->
+            <div class="carousel-caption">
+                <h4>Slide {{image.id}}</h4>
+                <p>Nice Image</p>
+            </div>
+        </div>
+    </div>
+
+</div>

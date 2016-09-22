@@ -1,7 +1,7 @@
 angular.module("products")
-    .controller("productsCtrl", ["$scope", "productsSvc", "cartSvc",
+    .controller("productsCtrl", ["$scope", "productsSvc", "cartSvc", "$rootScope",
 
-                                 function ($scope, productsSvc, cartSvc) {
+                                 function ($scope, productsSvc, cartSvc, $rootScope) {
             productsSvc.getProductList()
                 .then(function (response) {
                     console.log(response);
@@ -13,7 +13,16 @@ angular.module("products")
             $scope.showMore = function () {
                 $scope.productCount += 3;
             };
+            $scope.removeProductFromCart = function (product) {
+                $rootScope.$broadcast("ProductRemoved", {
+                    price: product.price
+                });
+            };
             $scope.addProductToCart = function (product) {
+
+                $rootScope.$broadcast("AddedProduct", {
+                    price: product.price
+                });
                 cartSvc.addProducts(product);
             };
 }]);
