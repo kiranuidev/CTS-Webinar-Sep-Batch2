@@ -3,7 +3,7 @@
     <div class="form-group">
         <label for="inputEmail" class="control-label col-xs-2">User Name</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="User Name" name="username" ng-model="loginVM.user.username" ng-required="true" ng-minlength="4" ng-maxlength="10">
+            <input type="text" class="form-control" placeholder="User Name" name="username" ng-model="loginVM.user.username" ng-required="true" ng-minlength="4" ng-maxlength="10" name-only>
             <div ng-show="loginForm.username.$dirty">
                 <p ng-show="loginForm.username.$error.required">UserName is required</p>
                 <p ng-show="loginForm.username.$error.minlength">UserName should have minimum 4 characters.</p>

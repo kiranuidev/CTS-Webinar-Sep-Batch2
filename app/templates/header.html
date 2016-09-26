@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -8,25 +8,32 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{{brandName}}</a>
+            <a class="navbar-brand" href="#" brand-name>
+
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li ng-click="loadView(item.path)" ng-repeat="item in navItems">
-                    <a href="#">{{item.display}}</a>
+                    <a href="#">{{item.display|translate}}</a>
                 </li>
 
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#">Bag <label class="badge">{{total.items}}</label></a>
+                    <a href="#">{{'Bag'|translate}} <label class="badge">{{total.items}}</label></a>
                 </li>
                 <li>
-                    <a href="#">Total Price <label class="badge">{{total.price|currency :"INR"}}</label></a>
+                    <a href="#">{{'Total Price'|translate}} <label class="badge">{{total.price|currency :"INR"}}</label></a>
                 </li>
+
+                <li ng-click="changeLanguage('en')">
+                    <a href="#">English</a></li>
+                <li ng-click="changeLanguage('de')">
+                    <a href="#">Deutsche</a></li>
 
             </ul>
 

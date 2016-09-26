@@ -1,6 +1,6 @@
 angular.module("header")
-    .controller("headerCtrl", ["$scope", "$rootScope",
-                               function ($scope, $rootScope) {
+    .controller("headerCtrl", ["$scope", "$rootScope", "$translate",
+                               function ($scope, $rootScope, $translate) {
             $scope.brandName = "FlipZon";
             $scope.total = {
                 items: 0,
@@ -39,4 +39,8 @@ angular.module("header")
                 $scope.total.items--;
                 $scope.total.price -= args.price;
             });
+
+            $scope.changeLanguage = function (name) {
+                $translate.use(name);
+            };
 }]);

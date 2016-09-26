@@ -13,7 +13,7 @@
                     <p ng-show="registerForm.firstName.$error.required">
                         First Name Required
                     </p>
-                    <p ng-show="registerForm.firstName.$error.pattern">
+                    <p style="color:red" ng-show="registerForm.firstName.$error.pattern">
                         Alphabets only allowed
                     </p>
                 </div>
@@ -22,7 +22,7 @@
         <div class="form-group">
             <label for="inputEmail" class="control-label col-xs-2">Last Name</label>
             <div class="col-xs-4">
-                <input type="text" name="lastName" class="form-control" ng-model="vm.user.lastName" ng-minlength="3" ng-maxlength="10">
+                <input type="text" name="lastName" class="form-control" ng-model="vm.user.lastName" ng-minlength="3" ng-maxlength="10" name-only>
                 <p ng-show="registerForm.lastName.$error.minlength">
                     Last Name must be 3 characters length</p>
                 <p ng-show="registerForm.lastName.$error.maxlength">
@@ -85,7 +85,7 @@
         <div class="form-group">
             <label for="inputEmail" class="control-label col-xs-2">Phone Number</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control" placeholder="Phone Number" ng-model="vm.user.phoneNumber">
+                <input type="text" class="form-control" placeholder="Phone Number" ng-model="vm.user.phoneNumber" numerics-only>
 
             </div>
         </div>
