@@ -1,7 +1,13 @@
 angular.module("register")
-    .controller("registerCtrl", ["lookupSvc", "$scope",
-                                 function (lookupSvc, $scope) {
+    .controller("registerCtrl", ["lookupSvc", "$scope", "$state",
+
+                                 function (lookupSvc, $scope, $state) {
             var vm = this;
+            $scope.userRegister = function () {
+                $state.go("home", {
+                    data: vm.user.firstName
+                });
+            };
             this.user = {};
             lookupSvc.getCountries()
                 .then(function (response) {

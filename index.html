@@ -12,16 +12,37 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 </head>
 
 <body>
+
     <div class="container" ng-controller="headerCtrl">
         <div ng-include="'app/templates/header.html'"></div>
-        <div ng-include="content"></div>
+        <!--<a ui-sref="home">Home</a>
+        <a ui-sref="products">Products</a>
+        <a ui-sref="register">Register</a>-->
+        <div ui-view></div>
     </div>
+
+    <!-- <div class="container" ng-controller="headerCtrl">
+        <div ng-include="'app/templates/header.html'"></div>
+        <div ng-include="content"></div>
+    </div>-->
+    <!--<div class="container" ng-controller="demoCtrl">
+    <input type="text" ng-model="username">
+    <h1>{{count}}</h1>
+    <div one-way-binding dirname="{{username}}" counter="count"></div>
+
+
+</div>-->
+    <!--<div i-am-complex>
+    <h1>Durga</h1>
+</div>-->
 
     <script src="app/authentication/authentication.js"></script>
     <script src="app/authentication/authentication-service.js"></script>
+
 
     <script src="app/header/header.js"></script>
     <script src="app/header/header-controller.js"></script>
@@ -52,6 +73,8 @@
     <script src="app/ctsComponents/ctscomponents-brandName.js"></script>
     <script src="app/ctsComponents/ctscomponents-nameOnly.js"></script>
     <script src="app/ctsComponents/ctscomponents-numericsOnly.js"></script>
+    <script src="app/ctsComponents/ctscomponents-checkUser.js"></script>
+    <script src="app/ctsComponents/ctscomponents.isolatedScope.js"></script>
 </body>
 
 </html>

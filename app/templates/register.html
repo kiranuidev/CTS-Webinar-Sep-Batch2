@@ -1,5 +1,5 @@
 <h1>Register</h1>
-<form name="registerForm" ng-controller="registerCtrl as vm" novalidate>
+<form name="registerForm" novalidate>
     <div class="alert alert-danger" ng-show="vm.showError">
         There was a problem in fetching data.
     </div>
@@ -112,7 +112,7 @@
 
         <div class=" form-group ">
             <div class="col-xs-offset-2 col-xs-4 ">
-                <button type="button" class="btn btn-primary" ng-disabled="!vm.user.agreeTerms">Register</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!vm.user.agreeTerms" ng-click="userRegister()">Register</button>
             </div>
         </div>
     </div>

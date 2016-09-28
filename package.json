@@ -1,0 +1,26 @@
+{
+  "name": "cts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpFile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiranuidev/CTS-Webinar-Sep-Batch2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiranuidev/CTS-Webinar-Sep-Batch2/issues"
+  },
+  "homepage": "https://github.com/kiranuidev/CTS-Webinar-Sep-Batch2#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.3"
+  }
+}

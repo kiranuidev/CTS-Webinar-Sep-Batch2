@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li ng-click="loadView(item.path)" ng-repeat="item in navItems">
-                    <a href="#">{{item.display|translate}}</a>
+                    <a ui-sref="{{item.path}}">{{item.display|translate}}</a>
                 </li>
 
 

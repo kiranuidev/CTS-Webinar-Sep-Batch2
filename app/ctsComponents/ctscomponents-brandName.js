@@ -5,5 +5,3 @@ angular.module("ctsComponents")
             restrict: "A"
         }
 }]);
-//brandName
-//brand-name on html
